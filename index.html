@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaland Institute Contact Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #1a2b4a;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo {
+            width: 120px;
+            margin: 20px auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        .institute-name {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 5px;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .institute-subname {
+            font-size: 1rem;
+            color: #cccccc;
+            margin-bottom: 20px;
+            animation: slideIn 0.7s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .admissions {
+            background-color: #2a3b6a;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .admissions:hover {
+            background-color: #3a4b8a;
+        }
+
+        .form-container {
+            background-color: #2a3b6a;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            animation: fadeInUp 0.8s ease-out;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3a4b8a;
+            color: #ffffff;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        input:focus, select:focus {
+            background-color: #4a5b9a;
+            transform: scale(1.02);
+            outline: none;
+        }
+
+        input::placeholder {
+            color: #cccccc;
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+            background-repeat: no-repeat;
+            background-position-x: 98%;
+            background-position-y: 50%;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #00b7eb;
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0099cc;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #cccccc;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        .success-message {
+            display: none;
+            background-color: #2a3b6a;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @media (max-width: 600px) {
+            .institute-name {
+                font-size: 2rem;
+            }
+
+            .institute-subname {
+                font-size: 0.9rem;
+            }
+
+            .form-container {
+                padding: 15px;
+            }
+        }
+
+        @media (min-width: 601px) {
+            .container {
+                max-width: 600px;
+            }
+
+            .form-container {
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="logo.png" alt="Zaland Institute Logo" class="logo">
+        <h1 class="institute-name">Zaland</h1>
+        <h2 class="institute-subname">Institute of Medical Science YarHussain</h2>
+        <div class="admissions">Admissions Open Fall 2025 (Aug-Sep)</div>
+        
+        <div class="form-container">
+            <form action="https://formsubmit.co/Attaullah.sher@me.com" method="POST" id="contact-form">
+                <input type="hidden" name="_subject" value="Zaland Institute Contact Form Submission">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="">
+                
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nic">NIC Number</label>
+                    <input type="text" id="nic" name="nic" placeholder="Enter your NIC number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="inquiry-type">Inquiry Type</label>
+                    <select id="inquiry-type" name="inquiry_type" required>
+                        <option value="" disabled selected>Select inquiry type</option>
+                        <option value="service">Service</option>
+                        <option value="course">Course</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="service-group" style="display: none;">
+                    <label for="service">Select Service</label>
+                    <select id="service" name="service">
+                        <option value="" disabled selected>Select a service</option>
+                        <option value="Physion Therapy">Physion Therapy</option>
+                        <option value="Hydra Facial">Hydra Facial</option>
+                        <option value="Laser Hair Removal">Laser Hair Removal</option>
+                        <option value="Whitening Drips">Whitening Drips</option>
+                        <option value="Face PRP">Face PRP</option>
+                        <option value="Micro Needling">Micro Needling</option>
+                        <option value="Mole Removal">Mole Removal</option>
+                        <option value="Carbon Peel">Carbon Peel</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="course-group" style="display: none;">
+                    <label for="course">Select Course</label>
+                    <select id="course" name="course">
+                        <option value="" disabled selected>Select a course</option>
+                        <option value="2 Years Diploma in Pathology">2 Years Diploma in Pathology</option>
+                        <option value="2 Years Diploma in Dental">2 Years Diploma in Dental</option>
+                        <option value="2 Years Diploma in Health">2 Years Diploma in Health</option>
+                        <option value="2 Years Diploma in Radiology">2 Years Diploma in Radiology</option>
+                        <option value="2 Years Diploma in Surgical">2 Years Diploma in Surgical</option>
+                        <option value="2 Years Diploma in Category B">2 Years Diploma in Category B</option>
+                        <option value="2 Years Diploma in LHV">2 Years Diploma in LHV</option>
+                        <option value="2 Years Diploma in CNA">2 Years Diploma in CNA</option>
+                        <option value="2 Years Diploma in Cardiology">2 Years Diploma in Cardiology</option>
+                        <option value="1 Year Course in Ultrasound + ECG">1 Year Course in Ultrasound + ECG</option>
+                    </select>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+            <div class="success-message" id="success-message">
+                Form successfully submitted! We will get back to you soon.
+            </div>
+        </div>
+
+        <footer>
+            <p>Adina Road, Near MCB Bank, Yar Hussain</p>
+            <p>Contact: Dr. Faiz: 03137029574 | Zahid: 06459809949</p>
+        </footer>
+    </div>
+
+    <script>
+        const form = document.getElementById('contact-form');
+        const inquiryType = document.getElementById('inquiry-type');
+        const serviceGroup = document.getElementById('service-group');
+        const courseGroup = document.getElementById('course-group');
+        const successMessage = document.getElementById('success-message');
+
+        inquiryType.addEventListener('change', function() {
+            serviceGroup.style.display = this.value === 'service' ? 'block' : 'none';
+            courseGroup.style.display = this.value === 'course' ? 'block' : 'none';
+        });
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    form.style.display = 'none';
+                    successMessage.style.display = 'block';
+                }
+            })
+            .catch(error => {
+                console.error('Form submission error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
